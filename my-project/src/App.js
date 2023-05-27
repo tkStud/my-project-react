@@ -1,5 +1,5 @@
 import Header from "./components/Header";
-import AdviceComponent from "./components/AdviceComponent";
+import CompagniesComponent from "./components/CompagniesComponent";
 
 function App() {
   
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header/>
-      <AdviceComponent/>      
+      <CompagniesComponent/>      
     </>
   );
 }
