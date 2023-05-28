@@ -13,7 +13,7 @@ function App() {
     <Header/>
      {/*On utilise nos props de buttonModal dans l'élément app c'est a dire le grand-parent pour rappel app => Modal => ButtonModal  */}
     <Modal
-      label='lorem ipsum...'
+      label={3}
       type="button"
       handleClick={hClick}
       background='blue'

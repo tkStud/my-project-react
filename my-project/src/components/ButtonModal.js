@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react'
+import PropTypes from 'prop-types';
+
 
 function ButtonModal({label,handleClick,background,color}){ // on créer nos props 
 
@@ -13,6 +15,10 @@ function ButtonModal({label,handleClick,background,color}){ // on créer nos pro
 
 		</button>
 	)
+}
+//protype a désactiver en mode production
+ButtonModal.propTypes = {
+	label:PropTypes.string.isRequired // vérifie le type et la présence de valeur pour label 
 }
 
 export default ButtonModal
