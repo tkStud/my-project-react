@@ -1,22 +1,37 @@
+import { useState } from "react";
+import ButtonBase from "./components/ButtonBase";
 import Header from "./components/Header";
-import Page1 from "./views/Page1";
-import Page2 from "./views/Page2";
-import Page3 from "./views/Page3";
-import { BrowserRouter as Router , Routes , Route  } from "react-router-dom";
+
 
 function App() {
-  
+  const [count, setCount] = useState(10) // on créer un état pour notre compteur
+
+  //on créer une fonction pour modifier notre état dans le fichier parent qu'on passe en props  à comp button car sinon cela creer des problème
+  const handleChange = (mode) => {
+    if (mode === '+'){
+      setCount(count + 10)
+      return; // rappel js: on peut se passer de else car si le if n'est pas vrai alors ce sera le reste du code qui sera executer implicitement
+    }
+    setCount(count - 10)
+  }
   
   return (
-    <Router> {/*racine de notre router*/}
+    <>
       <Header/>
-      <Routes> {/*Pour linstend on va dire que c'est notre switch ou on va config toute nos route */}
-      <Route path="Page1" Component={Page1}/> {/*on creer chaque route...*/}
-      <Route path="Page2" Component={Page2}/>
-      <Route path="Page3" Component={Page3}/>
-      </Routes>
-      
-    </Router>
+      <div className="div-bu">
+        <ButtonBase
+          val ='+'
+          classProps='class-bu'
+          handle ={() => handleChange('+')} /*notre prop handle est = a handleChangeavec en paramètre '+' pour établire a quel moment ce passe la l'incrémentation */
+        />
+         <ButtonBase
+          val ='-'
+          classProps='class-bu'
+          handle={( )=> handleChange('-')}
+      />
+      {count}
+      </div>
+    </>
   );
 }
 
