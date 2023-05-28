@@ -28,17 +28,17 @@ header > p{
   margin-bottom: 50px;
 }
 
-.div-bu{
-  display: inline-block;
-  margin-left:45% ;
-}
 
-.class-bu{
-  
-  width: 50px;
-  height: 50px;
-  
-  
+.modal-style{
+  width: 500px;
+  height: 350px;
+  background-color: lightpink;
+  border: solid 3px black;
+  border-radius:30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  text-align: center;
 }
 
 
