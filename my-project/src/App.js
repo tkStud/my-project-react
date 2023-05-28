@@ -1,21 +1,25 @@
-import { useState } from "react";
-
 import Header from "./components/Header";
 import Modal from "./components/Modal";
 
 
 function App() {
 
+  const hClick = () =>{
+    console.log('clicked')
+  }
   
   return (
     <>
     <Header/>
-    <Modal> {/*On a besoin des deux balise du composant modal pour mettre directement du jsx grace a la props children*/}
-      <div>
-        <h2>titre modale</h2>
-        <p>je vais vous dire peut etre moins à l'époque etc.....</p>
-      </div>
-    </Modal>
+     {/*On utilise nos props de buttonModal dans l'élément app c'est a dire le grand-parent pour rappel app => Modal => ButtonModal  */}
+    <Modal
+      label='lorem ipsum...'
+      type="button"
+      handleClick={hClick}
+      background='blue'
+      color='white'
+    />
+
     </>
   );
 }
