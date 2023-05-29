@@ -16,8 +16,8 @@ const ButtonStyled = styled.button `
 `;
 
 const CallToClick = styled(ButtonStyled)` on peut stylisé un autre element html en lui passant Buttonstyle
-  background-color: #ff4757;
-  color: #f5f5f5;
+background-color: ${props => props.theme.brand ?? '#ff4757'};
+color: ${props => props.theme.neutral100 ?? '#F5F5F5'};
 `;
 
 const handleChange = () => {
