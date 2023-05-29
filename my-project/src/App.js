@@ -1,27 +1,28 @@
 import React from 'react';
-import './App.css';
-import { ThemeProvider } from 'styled-components';
+import { useState } from 'react';
 import Header from './components/Header';
-import Button from './components/Button';
+import ClassComponent from './components/ClassComponent';
 
 
-const theme = {
-  brand: '#5352ed',
-  neutral100: '#fff'
-}
 
 function App() {
 
- 
+  const [state,setState] = useState(0)
+	const incrState = ()=>{
+		setState(prevState => prevState + 1)
+}
   
   return (
     <>
       <Header/>
-      <div className="App">
-      <ThemeProvider theme={theme}>
-        <Button />
-      </ThemeProvider>
-    </div>
+      
+      
+
+      {state < 10 ? <ClassComponent value={state}/> : <span>Composant démonté</span>}
+		  <button onClick={incrState}> Cliquez-moi ! </button>
+      
+  
+    
     </>
   );
 }
