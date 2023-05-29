@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Header from './components/Header';
-import ClassComponent from './components/ClassComponent';
+import FonctionComponent from './components/FonctionComponent';
 
 
 
@@ -18,7 +18,7 @@ function App() {
       
       
 
-      {state < 10 ? <ClassComponent value={state}/> : <span>Composant démonté</span>}
+      {state < 10 ? <FonctionComponent value={state}/> : <span>Composant démonté</span>}
 		  <button onClick={incrState}> Cliquez-moi ! </button>
       
   
